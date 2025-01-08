@@ -1,0 +1,31 @@
+import java.util.Random;
+
+public class RandomPrimeChecker {
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        
+        // Generate a random number between 1 and 100
+        int number = random.nextInt(100) + 1;
+        System.out.println("Generated number: " + number);
+        
+        if (isPrime(number)) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
+    }
+
+    // Method to check if a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
